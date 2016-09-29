@@ -91,10 +91,10 @@ def print_similar(model, name_list):
     for k, s in model.most_similar(positive=name_list, topn=5):
         print k, s
 
-def plot_cluster(model, novel_names):
+def plot_cluster(model, novel_names, novel):
     all_names = np.array([])
     word_vectors = None
-    for name in novel_names["神雕侠侣"]:
+    for name in novel_names[novel]:
         if name in model:
             all_names = np.append(all_names, name)
             if word_vectors is None:
@@ -124,4 +124,4 @@ if __name__ == '__main__':
     print_similar(model, ["双儿", "方怡", "阿珂"])
     print_similar(model, ["丐帮"])
     print_similar(model, ["降龙十八掌"])
-    plot_cluster(model, novel_names)
+    plot_cluster(model, novel_names, "笑傲江湖")
