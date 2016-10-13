@@ -69,7 +69,7 @@ print len(sentences)
 
 china_mask = np.array(Image.open(path.join(d, "china_mask_1.png")))
 wc = WordCloud(font_path='./simheittf/simhei.ttf', background_color="white", 
-              margin=5, width=1800, height=800, mask=china_mask)
+              margin=5, mask=china_mask, max_words=200)
 wc = wc.generate(sentences)
 wc.to_file(path.join(d, "shediao.png"))
 
