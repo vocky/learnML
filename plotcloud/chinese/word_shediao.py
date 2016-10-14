@@ -67,7 +67,7 @@ def get_book(filepath):
 sentences = get_book("./resources/books/射雕英雄传.txt")
 print len(sentences)
 
-china_mask = np.array(Image.open(path.join(d, "china_mask_1.png")))
+china_mask = np.array(Image.open(path.join(d, "china_mask.png")))
 wc = WordCloud(font_path='./simheittf/simhei.ttf', background_color="white", 
               margin=5, mask=china_mask, max_words=200)
 wc = wc.generate(sentences)
